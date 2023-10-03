@@ -5,20 +5,23 @@ using System.Collections.Generic;
 using NUnit.Framework;
 using OpenQA.Selenium.Support.UI;
 using WebDriverManager.DriverConfigs.Impl;
+using SauceLabs.utilities;
 
 namespace SauceLabs.tests
 {
-    public class Tests
+    public class Tests : Base
     {
-        [SetUp]
-        public void Setup()
-        {
-        }
 
         [Test]
-        public void Test1()
+        public void TestLogin()
         {
-            Assert.Pass();
+            driver.FindElement(By.Id("onetrust-accept-btn-handler")).Click();                   
+            Console.WriteLine("Test One Pass successful..");
+        
+            driver.FindElement(By.CssSelector(".MuiButtonBase-root.MuiButton-root.MuiButton-text.MuiButton-textDark.MuiButton-sizeMedium.MuiButton-textSizeMedium.MuiButton-disableElevation.MuiButton-root.MuiButton-text.MuiButton-textDark.MuiButton-sizeMedium.MuiButton-textSizeMedium.MuiButton-disableElevation.css-zaj0tr")).Click();
+
+            Console.WriteLine("Test Two running successful..");
         }
+
     }
 }
