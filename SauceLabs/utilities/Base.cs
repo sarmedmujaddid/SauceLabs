@@ -23,7 +23,7 @@ namespace SauceLabs.utilities
             //driver = new ChromeDriver();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
             driver.Manage().Window.Maximize();
-            driver.Url = "https://saucelabs.com/";
+            driver.Url = "http://automationexercise.com";
         }
 
         public IWebDriver getDriver()
