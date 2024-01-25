@@ -53,7 +53,38 @@ namespace SauceLabs.utilities
             }
         }
 
-        [TearDown]
+     public class IFrameHandler
+    
+        {
+        private readonly IWebDriver driver;
+
+        public IFrameHandler(IWebDriver driver)
+        {
+            this.driver = driver;
+        }
+
+        public void SwitchToIframe(string iframeId)
+        {
+                IWebElement iframeElement1 = driver.FindElement(By.Id("aswift_1"));
+                IWebElement iframeElement2 = driver.FindElement(By.Id("aswift_2"));
+                IWebElement iframeElement3 = driver.FindElement(By.Id("aswift_3"));
+                IWebElement iframeElement4 = driver.FindElement(By.Id("aswift_4"));
+
+            driver.SwitchTo().Frame(iframeElement1);
+            driver.SwitchTo().Frame(iframeElement2);
+            driver.SwitchTo().Frame(iframeElement3);
+            driver.SwitchTo().Frame(iframeElement4);
+           
+            }
+
+        public void SwitchToDefaultContent()
+        {
+            driver.SwitchTo().DefaultContent();
+        }
+    }
+
+
+    [TearDown]
         public void closeBrowser()
         {
             driver.Dispose();
